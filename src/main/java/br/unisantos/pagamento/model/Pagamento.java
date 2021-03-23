@@ -5,7 +5,7 @@ import java.util.Date;
 
 public class Pagamento {
     private BigDecimal valor;
-    private String cartao;
+    private Cartao cartao;
     private Date validade;
 
     public Pagamento() {  }
@@ -18,11 +18,11 @@ public class Pagamento {
 		this.valor = valor;
 	}
 
-	public String getCartao() {
+	public Cartao getCartao() {
 		return cartao;
 	}
 
-	public void setCartao(String cartao) {
+	public void setCartao(Cartao cartao) {
 		this.cartao = cartao;
 	}
 

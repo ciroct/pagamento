@@ -10,11 +10,15 @@
 	<h1>Confirmação do Pagamento</h1>
 	<h:panelGrid columns="2">
 		Valor:
-		<h:outputText value="#{pagamentoBean.pagamento.valor}" />
+		<h:outputText value="#{pagamentoBean.pagamento.valor}" >
+			<f:convertNumber type="currency" />
+		</h:outputText>
 		Cartão de crédito:
 		<h:outputText value="#{pagamentoBean.pagamento.cartao}" />
 		Data de validade (Mês/Ano):
-		<h:outputText value="#{pagamentoBean.pagamento.validade}" />
+		<h:outputText value="#{pagamentoBean.pagamento.validade}" >
+			<f:convertDateTime pattern="MM/yyyy" />
+		</h:outputText>
 	</h:panelGrid>
 	<h:button value="Nova compra" outcome="/index" />
 </h:body>
