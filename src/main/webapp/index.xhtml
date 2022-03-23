@@ -15,14 +15,13 @@
 			<h:outputLabel value="Valor:" for="valor" />
 			<h:inputText value="#{pagamentoBean.pagamento.valor}" id="valor" name="valor" required="true"
 			    converterMessage="O valor da compra deve ser informado em reais" requiredMessage="#{msgs.obrigatorio}">
-				<f:convertNumber minFractionDigits="2"/>
-				<f:validateLongRange minimum="10" maximum="100000"/>
+				<f:convertNumber minFractionDigits="2"/>				
 			</h:inputText>
 			<h:message for="valor" styleClass="erro"/>
 			<h:outputLabel value="Cartão de crédito:" for="cartao" />
 			<h:inputText id="cartao" value="#{pagamentoBean.pagamento.cartao}" name="número do cartão" required="true"
-			    validatorMessage="O cartão de crédito tem 16 números">
-				<f:validateLength minimum="16"/>
+			    converter="converter.Cartao">
+				<f:validator validatorId="validator.Cartao"/>
 			</h:inputText>
 			<h:message for="cartao" styleClass="erro"/>
 			<h:outputLabel value="Data de validade (Mês/Ano):" for="data" />

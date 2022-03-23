@@ -15,7 +15,7 @@
 			<f:convertNumber type="currency"/>
 		</h:outputText>
 		Cartão de crédito:
-		<h:outputText value="#{pagamentoBean.pagamento.cartao}" />
+		<h:outputText value="#{pagamentoBean.pagamento.cartao}" converter="converter.Cartao"/>
 		Data de validade (Mês/Ano):
 		<h:outputText value="#{pagamentoBean.pagamento.validade}">
 			<f:convertDateTime pattern = "MM/yyyy"/>

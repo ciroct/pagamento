@@ -2,9 +2,15 @@ package br.unisantos.pagamento.model;
 
 import java.util.Date;
 
+import javax.validation.constraints.Future;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+
 public class Pagamento {
+	@Min(10) @Max(100000)
 	private Float valor;
-	private String cartao;
+	private Cartao cartao;
+	@Future
 	private Date validade;
 
 	public Pagamento() {
@@ -18,11 +24,11 @@ public class Pagamento {
 		this.valor = valor;
 	}
 
-	public String getCartao() {
+	public Cartao getCartao() {
 		return cartao;
 	}
 
-	public void setCartao(String cartao) {
+	public void setCartao(Cartao cartao) {
 		this.cartao = cartao;
 	}
 
